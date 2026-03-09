@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fce4ec; /* สีพื้นหลังเว็บพาสเทลชมพู */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('images/background.png'); /* ดึงรูปฉากหลังมาใช้ */
+    background-color: #fce4ec; /* Background fallback */
+    background-size: cover; /* ปรับรูปให้พอดีกรอบ */
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#ui {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #5d4037;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.screen {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    text-align: center;
+}
+
+.screen h1 { color: #d81b60; margin-bottom: 10px; }
+.screen p { color: #555; margin-bottom: 20px; }
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover { background-color: #c2185b; }
+
+.hidden { display: none !important; }
+
+/* ตัวละครผู้เล่น (น้องแมว) */
+#player {
+    width: 180px; 
+    height: 180px;
+    background-image: url('images/cat.png'); /* ดึงรูปน้องแมวมาใช้ */
+    background-size: contain; /* ปรับรูปให้อยู่ในกรอบ */
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 20px;
+    left: 350px;
+    transition: left 0.1s ease;
+}
+
+/* ไอเทมที่ตกลงมา */
+.item {
+    width: 60px; /* ขนาดใหญ่ขึ้น */
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.boba {
+    background-image: url('images/boba.png'); /* ดึงรูปไข่มุกมาใช้ */
+    background-color: #3e2723; /* Fallback color ถ้าโหลดรูปไม่ได้ */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.lime {
+    background-image: url('images/lime.png'); /* ดึงรูปมะนาวมาใช้ */
+    background-color: #8bc34a; /* Fallback color */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.golden-boba {
+    background-image: url('images/golden-boba.png'); /* รูปไข่มุกทองคำ */
+    background-color: #ffd700; /* Fallback color สีทอง */
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 20px #ffd700, inset 0 0 10px #fff;
+    border: 2px solid #fff;
+}
